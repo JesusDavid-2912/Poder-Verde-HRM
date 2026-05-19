@@ -1,6 +1,6 @@
 # Poder Verde HRM
 
-Sistema de gestión de recursos humanos para administrar empleados, tareas, asistencia, permisos, nómina, documentos y reportes KPI.
+Proyecto universitario de un sistema integral de gestión de recursos humanos (HRM) diseñado para administrar empleados, tareas, asistencia, permisos, nómina, documentos y reportes KPI de manera eficiente.
 
 Tecnologías principales:
 
