@@ -1,0 +1,70 @@
+/* ─── DOCUMENTOS ──────────────────────────────────────────── */
+.doc-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gray-100);
+  background: #fff;
+  margin-bottom: 10px;
+  transition: box-shadow 0.2s;
+}
+.doc-item:hover {
+  box-shadow: var(--shadow);
+}
+.doc-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background: var(--gray-100);
+}
+.doc-info {
+  flex: 1;
+}
+.doc-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+.doc-meta {
+  font-size: 11px;
+  color: var(--gray-500);
+  margin-top: 2px;
+}
+.upload-zone {
+  border: 2px dashed var(--gray-300);
+  border-radius: var(--radius);
+  padding: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #fff;
+}
+.upload-zone:hover {
+  border-color: var(--green-400);
+  background: var(--green-50);
+}
+.upload-feedback {
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.upload-feedback.uploading {
+  background: var(--gray-100);
+  color: var(--gray-700);
+}
+.upload-feedback.uploaded {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+.upload-feedback.error {
+  background: var(--red-light);
+  color: var(--red);
+}

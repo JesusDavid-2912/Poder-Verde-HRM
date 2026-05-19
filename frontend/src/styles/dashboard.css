@@ -1,0 +1,180 @@
+/* ─── DASHBOARD ───────────────────────────────────────────── */
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+.activity-item:last-child {
+  border-bottom: none;
+}
+.activity-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.activity-icon.green {
+  background: var(--green-100);
+}
+.activity-icon.amber {
+  background: var(--amber-light);
+}
+.activity-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-800);
+}
+.activity-title span {
+  font-weight: 700;
+}
+.activity-meta {
+  font-size: 11px;
+  color: var(--gray-500);
+  margin-top: 2px;
+}
+.activity-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.act-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+.act-btn.approve {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+.act-btn.reject {
+  background: var(--red-light);
+  color: var(--red);
+}
+.act-btn.manage {
+  background: var(--gray-100);
+  color: var(--gray-700);
+  padding: 0 12px;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.tool-card {
+  border-radius: var(--radius);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.tool-card.dark {
+  background: var(--green-900);
+  color: #fff;
+}
+.tool-card.dark:hover {
+  background: var(--green-800);
+}
+.tool-card.dark-2 {
+  background: #1c1c1e;
+  color: #fff;
+}
+.tool-card.dark-2:hover {
+  background: #2c2c2e;
+}
+.tool-card-icon {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+.tool-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.tool-card-desc {
+  font-size: 12px;
+  opacity: 0.7;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.tool-card-link {
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.tool-card.dark .tool-card-link {
+  color: var(--green-300);
+}
+.tool-card.dark-2 .tool-card-link {
+  color: var(--green-400);
+}
+
+.brand-card {
+  background: var(--green-800);
+  border-radius: var(--radius);
+  padding: 20px;
+  color: #fff;
+}
+.brand-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 6px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px auto;
+}
+.brand-circle-inner {
+  text-align: center;
+}
+.brand-pct {
+  font-size: 26px;
+  font-weight: 800;
+}
+.brand-label {
+  font-size: 10px;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.brand-metrics {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.brand-metric-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+.brand-metric-label {
+  opacity: 0.8;
+}
+.brand-metric-val {
+  font-weight: 700;
+}
+.brand-metric-val.up {
+  color: var(--green-300);
+}
+.brand-metric-val.exc {
+  color: var(--green-400);
+}

@@ -1,0 +1,133 @@
+/* ─── MODAL ───────────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+}
+.modal-overlay.open {
+  display: flex;
+}
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  width: 520px;
+  max-width: 90vw;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--green-900);
+}
+.modal-subtitle {
+  font-size: 12px;
+  color: var(--gray-500);
+  margin-top: 3px;
+}
+.modal-close {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--gray-500);
+  line-height: 1;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-close:hover {
+  background: var(--gray-100);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.form-group-m {
+  margin-bottom: 16px;
+}
+.form-group-m label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-700);
+  margin-bottom: 6px;
+}
+.form-group-m input,
+.form-group-m select,
+.form-group-m textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-group-m input:focus,
+.form-group-m select:focus,
+.form-group-m textarea:focus {
+  border-color: var(--green-600);
+}
+.form-help {
+  color: var(--gray-500);
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: -8px;
+}
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--gray-100);
+}
+.access-panel {
+  background: var(--green-50);
+  border: 1px solid var(--green-100);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  margin-top: 4px;
+}
+.access-panel-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green-900);
+  margin-bottom: 4px;
+}
+.access-panel-copy {
+  font-size: 12px;
+  color: var(--gray-600);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+.input-action-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.input-action-row input {
+  flex: 1;
+}
+.input-action-row .btn {
+  width: auto;
+}

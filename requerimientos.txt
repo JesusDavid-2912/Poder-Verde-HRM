@@ -1,0 +1,126 @@
+# Lista de Requerimientos para el Sistema HRM_PoderVerde
+# Sistema de Gestión de Recursos Humanos
+# Fecha: 20 de abril de 2026
+
+## 1. Requerimientos Funcionales
+# Los requerimientos funcionales describen las funcionalidades específicas que el sistema debe proporcionar.
+
+### RF-001: Autenticación de Usuarios
+El sistema debe permitir el inicio de sesión mediante correo electrónico y contraseña. Debe validar las credenciales contra la base de datos y redirigir al usuario al dashboard correspondiente (admin o empleado) basado en su rol.
+- Criterios de aceptación: Validación de email y contraseña; manejo de errores para credenciales inválidas; redirección automática post-login.
+
+### RF-002: Gestión de Empleados (CRUD)
+El sistema debe permitir a los administradores crear, leer, actualizar y eliminar registros de empleados, incluyendo información personal, profesional y de contacto.
+- Criterios de aceptación: Formularios para ingreso de datos; validación de campos obligatorios; actualización en tiempo real en la interfaz; eliminación con confirmación.
+
+### RF-003: Gestión de Tareas
+El sistema debe permitir a los administradores crear tareas, asignarlas a empleados y gestionar su estado. Los empleados deben poder actualizar el estado de sus tareas asignadas.
+- Criterios de aceptación: Creación de tareas con título, descripción y fecha límite; asignación múltiple a empleados; estados: pendiente, en proceso, finalizada; notificaciones implícitas vía actualización de estado.
+
+### RF-004: Sistema de Nómina Automatizado
+El sistema debe calcular automáticamente la nómina mensual para empleados activos, incluyendo salario base, deducciones (e.g., 10% retención) y bonificaciones, y permitir el procesamiento de pagos.
+- Criterios de aceptación: Generación mensual; cálculo de salario neto; estados: pendiente/pagada; reporte de nóminas por período.
+
+### RF-005: Generación de Reportes
+El sistema debe generar reportes de productividad, asistencia y estadísticas generales, filtrables por fechas.
+- Criterios de aceptación: Reportes de empleados activos, tareas completadas, asistencia puntual; exportación implícita vía JSON; gráficos o tablas en dashboard.
+
+### RF-006: Control de Asistencia
+El sistema debe registrar la asistencia diaria de empleados, incluyendo hora de entrada/salida y estado (puntual, retardo, falta), con posibilidad de justificaciones.
+- Criterios de aceptación: Registro manual o automático; estados definidos; subida de archivos para justificaciones.
+
+### RF-007: Gestión de Permisos y Aprobaciones
+El sistema debe permitir a empleados solicitar permisos y a administradores aprobarlos o rechazarlos.
+- Criterios de aceptación: Solicitudes con tipo, fechas y motivo; flujo de aprobación; estados: pendiente, aprobado, rechazado.
+
+### RF-008: Gestión de Documentos
+El sistema debe permitir subir y gestionar documentos asociados a empleados.
+- Criterios de aceptación: Subida de archivos; almacenamiento seguro; asociación por empleado.
+
+### RF-009: Dashboard Personalizado por Rol
+El sistema debe mostrar dashboards diferenciados: para empleados (tareas asignadas, perfil) y administradores (estadísticas globales, gestión).
+- Criterios de aceptación: Navegación basada en roles; widgets dinámicos; actualización en tiempo real.
+
+### RF-010: Cierre de Sesión
+El sistema debe permitir cerrar sesión y destruir la sesión del usuario.
+- Criterios de aceptación: Botón de logout; redirección a login; invalidación de sesión.
+
+## 2. Requerimientos No Funcionales
+# Estos describen atributos de calidad del sistema.
+
+### RNF-001: Seguridad de Datos
+El sistema debe proteger la información sensible mediante hashing de contraseñas (bcrypt recomendado) y validación de sesiones.
+- Criterios de aceptación: No almacenamiento de contraseñas en texto plano; protección contra inyección SQL vía prepared statements; HTTPS obligatorio.
+
+### RNF-002: Rendimiento
+El sistema debe responder a consultas en menos de 2 segundos para operaciones comunes.
+- Criterios de aceptación: Optimización de queries; uso de índices en BD; soporte para hasta 100 usuarios concurrentes.
+
+### RNF-003: Usabilidad
+La interfaz debe ser intuitiva, responsiva y accesible, con navegación clara y mensajes de error informativos.
+- Criterios de aceptación: Diseño mobile-first; consistencia visual; soporte para navegadores modernos.
+
+### RNF-004: Escalabilidad
+El sistema debe ser extensible para agregar nuevos módulos sin reestructuración mayor.
+- Criterios de aceptación: Arquitectura modular; BD normalizada.
+
+### RNF-005: Mantenibilidad
+El código debe ser legible, comentado y seguir estándares (e.g., PSR para PHP).
+- Criterios de aceptación: Funciones reutilizables; documentación; versionado.
+
+### RNF-006: Disponibilidad
+El sistema debe estar disponible al menos el 99% del tiempo, con manejo de errores.
+- Criterios de aceptación: Manejo de excepciones; logs de errores.
+
+## 3. Requerimientos de Sistema
+# Requisitos técnicos para despliegue.
+
+### RS-001: Plataforma de Servidor
+El sistema debe ejecutarse en un servidor web compatible con PHP 7.4+ y MySQL 5.7+.
+- Criterios de aceptación: Compatibilidad con Apache/Nginx; soporte para sesiones PHP.
+
+### RS-002: Base de Datos
+Debe utilizar MySQL con soporte para claves foráneas, triggers y procedimientos almacenados.
+- Criterios de aceptación: Esquema definido; respaldo automático.
+
+### RS-003: Navegador Web
+Soporte para navegadores modernos (Chrome, Firefox, Safari, Edge) con JavaScript habilitado.
+- Criterios de aceptación: Uso de Fetch API; no soporte para IE <11.
+
+### RS-004: Almacenamiento de Archivos
+Espacio para subir documentos con límites de tamaño (máx. 10MB por archivo).
+- Criterios de aceptación: Directorio seguro; validación de tipos MIME.
+
+### RS-005: Conectividad de Red
+Acceso a internet para carga de recursos; funcionamiento offline limitado.
+- Criterios de aceptación: URLs absolutas; cache de recursos.
+
+## 4. Requerimientos de Usuario
+# Necesidades de usuarios finales.
+
+### RU-001: Acceso Fácil para Empleados
+Los empleados deben poder acceder a sus tareas y perfil sin conocimientos técnicos.
+- Criterios de aceptación: Interfaz simple; soporte para edición de perfil.
+
+### RU-002: Visión Ejecutiva para Administradores
+Los administradores necesitan estadísticas en tiempo real y herramientas eficientes.
+- Criterios de aceptación: Dashboard con métricas; filtros en reportes.
+
+### RU-003: Privacidad de Datos
+Los usuarios deben tener control sobre su información y acceso restringido.
+- Criterios de aceptación: Roles estrictos; encriptación.
+
+### RU-004: Notificaciones y Alertas
+El sistema debe informar sobre tareas, aprobaciones y nóminas.
+- Criterios de aceptación: Mensajes en dashboard; emails opcionales.
+
+### RU-005: Soporte Multilingüe y Localización
+Interfaz en español; formatos locales.
+- Criterios de aceptación: Localización completa.
+
+# Notas para Desarrollo:
+# - Implementar arquitectura MVC o similar.
+# - Usar React, Node
+# - Frontend: HTML5, CSS3, JavaScript.
+# - Base de datos: Diseñar esquema relacional con las entidades identificadas.
+# - Documentación: Manual de usuario y técnico.

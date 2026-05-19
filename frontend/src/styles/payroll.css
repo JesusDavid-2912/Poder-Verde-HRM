@@ -1,0 +1,52 @@
+/* ─── NÓMINA ──────────────────────────────────────────────── */
+.nomina-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.nomina-card {
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.nomina-card.total {
+  background: #fff;
+  border: 1.5px solid var(--green-200);
+  border-left: 4px solid var(--green-600);
+}
+.nomina-card.bono {
+  background: #fff;
+  border: 1.5px solid #fde68a;
+  border-left: 4px solid var(--amber);
+}
+.nomina-card.dedu {
+  background: #fff;
+  border: 1.5px solid #fca5a5;
+  border-left: 4px solid var(--red);
+}
+.nomina-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 8px;
+}
+.nomina-label.green {
+  color: var(--green-600);
+}
+.nomina-label.amber {
+  color: var(--amber);
+}
+.nomina-label.red {
+  color: var(--red);
+}
+.nomina-value {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 4px;
+}
+.nomina-sub {
+  font-size: 12px;
+  color: var(--gray-500);
+}

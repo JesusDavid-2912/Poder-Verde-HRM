@@ -1,0 +1,48 @@
+/* ─── PERMISOS ────────────────────────────────────────────── */
+.permit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gray-100);
+  margin-bottom: 12px;
+  background: #fff;
+  transition: box-shadow 0.2s;
+}
+.permit-item:hover {
+  box-shadow: var(--shadow);
+}
+.permit-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+.permit-info {
+  flex: 1;
+}
+.permit-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+.permit-type {
+  font-size: 12px;
+  color: var(--gray-500);
+  margin-bottom: 4px;
+}
+.permit-dates {
+  font-size: 12px;
+  color: var(--gray-600);
+}
+.permit-reason {
+  font-size: 12px;
+  color: var(--gray-500);
+  margin-top: 4px;
+  font-style: italic;
+}
